@@ -1,0 +1,27 @@
+# Filename: main.kv
+
+# Importing necessary Kivy modules
+#:kivy 2.0.0
+
+# Creating a layout
+BoxLayout:
+    orientation: 'vertical'
+
+    Label:
+        text: 'Enter an Arabic word:'
+        font_size: '20sp'
+        size_hint_y: None
+        height: self.texture_size[1]
+
+    TextInput:
+        id: arabic_word_input
+        font_size: '20sp'
+        size_hint_y: None
+        height: '40dp'
+
+    Button:
+        text: 'Calculate'
+        font_size: '20sp'
+        size_hint_y: None
+        height: '40dp'
+        on_release: app.calculate_values(arabic_word_input.text)
